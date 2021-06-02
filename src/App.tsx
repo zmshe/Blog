@@ -1,9 +1,21 @@
+import { appConfig, AppConfigType }  from '@src/config/app-config';
+import ZmsheCard from '@src/components/zmshe-card'
 import './style/App.less';
 
 function App() {
   return (
-    <div className="App">
-     welcome
+    <div className="zmshe">
+      <div className="zmshe-content">
+        {
+          appConfig.map((item:AppConfigType) => (
+            <ZmsheCard
+              key={item.id}
+              text={item.text}
+              path={item.path}
+            />
+          ))
+        }
+      </div>
     </div>
   );
 }
