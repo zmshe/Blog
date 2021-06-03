@@ -4,8 +4,9 @@ import './style.less';
 const Index = ({text}: AppConfigType) => {
   return (
     <div className="zmshe-card" >
-      <div className="zmshe-card-current" />
-      {text}
+      <div className="zmshe-card-current">
+        {text}
+      </div>
     </div>
   )
 }

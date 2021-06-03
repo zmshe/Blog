@@ -1,34 +1,24 @@
+.zmshe-card-base{
+  color: rgb(2, 2, 2);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #f5bd8d;
+}
 .zmshe-card{
-    color: #333;
+  &:extend(.zmshe-card-base);
+    box-sizing: border-box;
+    position: relative;
     margin-right: 3%;
     width: 30%;
     min-width: 500px;
     height: 300px;
     margin-bottom: 30px;
-    border: 1px solid #fff;
     cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 4px;
-    background: #fff;
-    position: relative;
+    border-radius: 8px;
     overflow: hidden;
+    // transition: all 0.3s;
 }
-.zmshe-card-current{
-  display: block;
-  content: '';
-  position: absolute;
-  // top: 50%;
-  // left: 50%;
-  width: 0px;
-  height: 0px;
-  transition: all 0.5s;
-}
-.zmshe-card:hover .zmshe-card-current{
-   width: 140%;
-   height: 160%;
-   background: rgb(240, 229, 165);
-   border-radius: 50%;
-  // box-shadow: 0 0 30px rgb(243, 243, 243);
+.zmshe-card:hover{
+  //  border: 4px solid white;
 }

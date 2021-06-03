@@ -1,11 +1,13 @@
-import { appConfig, AppConfigType }  from '@src/config/app-config';
+import React from 'react';
+import { appConfig, AppConfigType } from '@src/config/app-config';
+import Header from '@src/components/header'
 import ZmsheCard from '@src/components/zmshe-card'
 import './style/App.less';
-
-function App() {
+const App = () => {
   return (
     <div className="zmshe">
-      <div className="zmshe-content">
+      <Header />
+       <div className="zmshe-content">
         {
           appConfig.map((item:AppConfigType) => (
             <ZmsheCard
