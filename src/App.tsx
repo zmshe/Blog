@@ -1,11 +1,26 @@
-import React from 'react';
+import React, {useEffect} from 'react';
+import {observer} from 'mobx-react'
 import { appConfig, AppConfigType } from '@src/config/app-config';
 import Header from '@src/components/header'
 import ZmsheCard from '@src/components/zmshe-card'
+import AppStore from '@src/stores/app'
 import './style/App.less';
 const App = () => {
+  const {theme, setTheme} = AppStore
+
+  useEffect(() => {
+    if(!localStorage.getItem('theme')) return;
+    const innerTheme = localStorage.getItem('theme');
+    setTheme(JSON.parse(innerTheme as string));
+  }, [setTheme])
+
+  useEffect(() => {
+    const zmshe:HTMLElement | null = document.getElementById('zmshe');
+    (zmshe as HTMLElement).style.background = theme.colour?.background
+  }, [theme])
+
   return (
-    <div className="zmshe">
+    <div className="zmshe" id="zmshe">
       <Header />
        <div className="zmshe-content">
         {
@@ -16,10 +31,10 @@ const App = () => {
               path={item.path}
             />
           ))
-        }
+          }
       </div>
     </div>
   );
 }
 
-export default App;
+export default observer(App);

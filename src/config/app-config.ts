@@ -24,9 +24,4 @@ export const appConfig:AppConfigType[] = [
     text:'开发中',
     path: '/'
   },
-  {
-    id: 5,
-    text:'开发中',
-    path: '/'
-  },
 ]

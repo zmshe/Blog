@@ -10,9 +10,15 @@
   <title>ZMSHE</title>
 </head>
 
+
 <body>
   <noscript>You need to enable JavaScript to run this app.</noscript>
   <div id="root"></div>
 </body>
+<script>
+  var innerTheme = localStorage.getItem('theme');
+  var root = document.getElementById('root');
+  root.style.background = innerTheme ? JSON.parse(innerTheme).colour.background : '#9AD0CB'
+</script>
 
 </html>
