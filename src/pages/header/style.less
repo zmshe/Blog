@@ -1,0 +1,25 @@
+.zmshe-header{
+  position: relative;
+  height: 60px;
+  border-bottom: 1px solid #eee;
+  transition: background 0.3s;
+  &-extend{
+    float:right;
+    height: 100%;
+    display: flex;
+    & > div{
+      border-left: 1px solid #eee;
+      font-size: 18px;
+      height: 100%;
+      cursor: pointer;
+      width: 60px;
+      line-height: 60px;
+      text-align: center;
+      transition: all 0.1s;
+    }
+    & > div:hover{
+      font-size: 26px;
+      color: #fff;
+    }
+  }
+}

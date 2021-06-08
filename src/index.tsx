@@ -1,17 +1,14 @@
-import ReactDOM from 'react-dom';
-import './style/index.css';
-// import App from './App';
-import Loadable from 'react-loadable';
-import ZmsheInitialize from '@src/components/zmshe-initialize'
+import React from "react";
+import ReactDOM from "react-dom";
+import Loadable from "react-loadable";
+import LoadingIcon from "@src/components/loading-icon";
+import "./style/index.css";
 
 const LoadableApp = Loadable({
-  loader: () => import('./App'),
+  loader: () => import("./App"),
   loading() {
-      return <ZmsheInitialize />
+    return <LoadingIcon />;
   },
 });
 
-ReactDOM.render(
-  <LoadableApp />,
-  document.getElementById('root')
-);
+ReactDOM.render(<LoadableApp />, document.getElementById("root"));

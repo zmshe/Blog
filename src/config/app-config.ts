@@ -1,27 +1,22 @@
 export interface AppConfigType {
-  id?:number;
-  text:string;
+  id?: number;
+  text: string;
   path: string;
 }
-export const appConfig:AppConfigType[] = [
+export const appConfig: AppConfigType[] = [
   {
     id: 1,
-    text:'博主简介',
-    path: '/'
+    text: "管理",
+    path: "/",
   },
   {
     id: 2,
-    text:'技术文档',
-    path: '/'
+    text: "记账",
+    path: "/",
   },
   {
     id: 3,
-    text:'开发进度',
-    path: '/'
+    text: "文档",
+    path: "/",
   },
-  {
-    id: 4,
-    text:'开发中',
-    path: '/'
-  },
-]
+];
