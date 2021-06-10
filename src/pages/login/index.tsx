@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import dayjs from "dayjs";
 import "./style.less";
 import { observer } from "mobx-react";
@@ -33,9 +33,17 @@ const Index: React.FC = () => {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
 
-  const { loginType } = AppStore;
+  const { loginType, theme } = AppStore;
 
   const hisroty = useHistory();
+
+  useEffect(() => {
+    const localTheme = localStorage.getItem("theme");
+    const zmshelogin = document.getElementById("zmshe-login");
+    (zmshelogin as HTMLElement).style.background = !localTheme
+      ? theme.colour.background
+      : JSON.parse(localTheme).colour.background;
+  }, []);
 
   const loginHandle = () => {
     const localUser = localStorage.getItem("user");
@@ -84,7 +92,7 @@ const Index: React.FC = () => {
   };
 
   return (
-    <div className="zmshe-login" id="login">
+    <div className="zmshe-login" id="zmshe-login">
       <div className="zmshe-login-content">
         <div className="zmshe-login-type">
           {loginTypeMap.map((item) => (

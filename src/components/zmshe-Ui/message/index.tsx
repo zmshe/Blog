@@ -9,7 +9,10 @@ const message = {
       <div className="zmshe-message">{value || "123123"}</div>
     );
     console.log(document.querySelector("zmshe-message"), 123123);
-    ReactDOM.render(<RenderNode />, document.getElementById("root"));
+    ReactDOM.createPortal(
+      <RenderNode />,
+      document.getElementById("root") as any
+    );
   },
 };
 
