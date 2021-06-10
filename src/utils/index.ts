@@ -3,7 +3,10 @@ interface LightenDarkenColorProps {
   col: string; // 设置颜色块 #xxxxxx
   amt: number; // 正数变亮 | 负数变暗
 }
- export const LightenDarkenColor = ({col, amt}:LightenDarkenColorProps) => {
+export const LightenDarkenColor = ({
+  col,
+  amt,
+}: LightenDarkenColorProps): string => {
   let usePound = false;
 
   if (col[0] === "#") {
@@ -29,4 +32,12 @@ interface LightenDarkenColorProps {
   else if (g < 0) g = 0;
 
   return (usePound ? "#" : "") + (g | (b << 8) | (r << 16)).toString(16);
+};
+
+export const queryLocalTotal = (): any => {
+  let size = 0;
+  Object.keys(window.localStorage).forEach((item) => {
+    size += (window.localStorage as any).getItem(item).length;
+  });
+  return (size / 1024).toFixed(2);
 };

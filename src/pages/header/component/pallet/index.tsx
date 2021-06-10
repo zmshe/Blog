@@ -41,7 +41,7 @@ const Index: React.FC = () => {
               {theme.theme !== item && (
                 <div className="zmshe-header-pallet-shade" />
               )}
-              {Object.values(palletConfig[item]).map((color: any) => (
+              {Object.values(palletConfig[item]).map((color) => (
                 <div style={{ background: color, width: "20%" }} key={color} />
               ))}
             </div>

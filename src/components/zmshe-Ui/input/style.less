@@ -1,0 +1,43 @@
+.zmshe-input{
+  display: inline-flex;
+  height: 60px;
+  align-items: flex-end;
+  &-box{
+    position: relative;
+  }
+  &-placeholder{
+    position: absolute;
+    cursor: text;
+    transition: all 0.2s;
+    top: 0px;
+    left: 0px;
+    pointer-events: none;
+  }
+  &-ref{
+    font-size: 16px;
+    padding: 4px 6px;
+    outline:0;
+    color: #3e3e3e;
+    -web-kit-appearance:none;
+    -moz-appearance: none;
+    border: none;
+    border-bottom: 2px solid #808080;
+    transition: all 0.8s;
+    &:hover{
+      border-bottom: 2px solid #20a5da;
+    }
+    &:focus{
+      border-bottom: 2px solid #20a5da;
+    }
+  }
+  &-clear{
+    position: absolute;
+    top: 3px;
+    right: 0px;
+    z-index: 10;
+    cursor: pointer;
+  }
+  &-ref:focus +&-placeholder{
+    top: -24px;
+  }
+}

@@ -1,5 +1,4 @@
 import { makeAutoObservable } from "mobx";
-
 interface ThemeType {
   theme: string;
   colour: {
@@ -8,6 +7,12 @@ interface ThemeType {
 }
 
 class App {
+  constructor() {
+    makeAutoObservable(this);
+  }
+
+  loginType: "local" | "remote" = "local";
+  userdata: any = {};
   theme: ThemeType = {
     theme: "森林",
     colour: {
@@ -18,10 +23,6 @@ class App {
       assist: "#88B8B3",
     },
   };
-
-  constructor() {
-    makeAutoObservable(this);
-  }
 
   setTheme = (theme: ThemeType) => {
     this.theme = theme;

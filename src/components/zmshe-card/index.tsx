@@ -6,7 +6,7 @@ import "./style.less";
 
 const Index = ({ text }: AppConfigType) => {
   const { theme } = AppStore;
-  const ref = useRef<any>(null);
+  const ref: React.MutableRefObject<any> = useRef(null);
 
   useEffect(() => {
     ref.current.style.background = theme.colour?.hint;

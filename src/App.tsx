@@ -9,6 +9,11 @@ const App = () => {
   const { theme, setTheme } = AppStore;
 
   useEffect(() => {
+    const currentUser = localStorage.getItem("currentUser");
+    AppStore.userdata = JSON.parse(currentUser as string);
+  }, []);
+
+  useEffect(() => {
     if (!localStorage.getItem("theme")) return;
     const innerTheme = localStorage.getItem("theme");
     setTheme(JSON.parse(innerTheme as string));

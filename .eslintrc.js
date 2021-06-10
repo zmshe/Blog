@@ -21,5 +21,7 @@ module.exports = {
   plugins: ["react", "@typescript-eslint", "prettier"],
   rules: {
     "prettier/prettier": "error",
+    "@typescript-eslint/no-explicit-any": ["off"],
+    "react/prop-types": ["off"],
   },
 };
