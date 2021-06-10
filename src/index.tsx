@@ -22,7 +22,7 @@ const LoadableApp = observer(() => {
     (rootRef as HTMLElement).style.background = !localTheme
       ? theme.colour.background
       : JSON.parse(localTheme).colour.background;
-  }, []);
+  }, [theme]);
 
   return (
     <BrowserRouter>
